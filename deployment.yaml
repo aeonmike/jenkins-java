@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-tomcat
+spec:
+  selector:
+    matchLabels:
+      app: apache-tomcat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: apache-tomcat
+    spec:
+      imagePullSecrets:
+        - name: mydockerhub
+      containers:
+        - name: apache-tomcat
+          image: mikejc30/jenkins-java:tomcat-v1
+          ports:
+            - containerPort: 80
