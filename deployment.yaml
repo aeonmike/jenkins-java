@@ -16,6 +16,6 @@ spec:
         - name: mydockerhub
       containers:
         - name: apache-tomcat
-          image: mikejc30/jenkins-java:tomcat-v2
+          image: mikejc30/jenkins-java:tomcat
           ports:
             - containerPort: 8080
