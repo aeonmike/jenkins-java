@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mikejc30/jenkins-java:tomcat-v$BUILD_NUMBER .'
+        sh 'docker build -t mikejc30/jenkins-java:tomcat .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push mikejc30/jenkins-java:tomcat-v$BUILD_NUMBER'
+        sh 'docker push mikejc30/jenkins-java:tomcat'
       }
     }
     stage('Deploy') {
